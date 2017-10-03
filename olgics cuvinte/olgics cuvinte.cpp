@@ -27,8 +27,6 @@ void CitireCuvinte() {
 	while (fin.getline(cuvinte, DMAX)) {
 		strcpy(M[i++], cuvinte);
 	}
-	fin >> nr;
-	cout << nr;
 	dimm = i - 1;
 }
 
@@ -67,9 +65,8 @@ void Bkt(int k, int n){
 }
 
 void ExtragereCuvinte(){
-
+	fin1 >> nr;
 	while (fin1 >> str[i++]);
-
 	int length = i - 1;
 	for (k = 1; k < length; k++)
 		for (i = 0; i < length; i++) {
@@ -84,14 +81,11 @@ void ExtragereCuvinte(){
 				sir1[0] = x;
 				strcat(sir, sir1);
 				//cout << sir<<" ";
-				Bkt(0, k + 1);
+				if (k+1 == nr)
+					Bkt(0, k + 1);
 			}
 		}
 }
-
-
-
-
 
 int main()
 {
@@ -106,4 +100,3 @@ int main()
 	}*/
     return 0;
 }
-
